@@ -1,0 +1,24 @@
+{
+  "name": "desafio-clases-es6",
+  "version": "1.0.0",
+  "description": "Desafío evaluado clases en Javascript ES6",
+  "main": "main.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "main"
+  },
+  "author": "Pablo Cruz Salinas",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.25.3"
+  },
+  "dependencies": {
+    "core-js": "^3.38.0"
+  }
+}
