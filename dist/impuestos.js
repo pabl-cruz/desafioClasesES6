@@ -15,6 +15,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 var Impuestos = exports.Impuestos = /*#__PURE__*/function () {
   function Impuestos(montoBrutoAnual, deducciones) {
     _classCallCheck(this, Impuestos);
+    //Metodos
     this._montoBrutoAnual = Number(montoBrutoAnual);
     this._deducciones = Number(deducciones);
   }
@@ -24,7 +25,9 @@ var Impuestos = exports.Impuestos = /*#__PURE__*/function () {
     get: function get() {
       return this._montoBrutoAnual;
     },
-    set: function set(cifra1) {
+    set:
+    //setters
+    function set(cifra1) {
       this._montoBrutoAnual = cifra1;
     }
   }, {

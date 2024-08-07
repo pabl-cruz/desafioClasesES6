@@ -1,30 +1,36 @@
-class Cliente{
-  constructor(nombre, impuesto){
-    this._nombre = nombre
-    this._impuesto = impuesto
+class Cliente {
+  constructor(nombre, impuesto) {
+    //metodos y metodos asociados a objeto Impuesto
+    this._nombre = nombre;
+    this._impuesto = impuesto;
+    this._impuesto.montoBrutoAnual = impuesto.montoBrutoAnual;
+    this._impuesto.deducciones = impuesto.deducciones;
   }
   //getter
-  get nombre(){
+  get nombre() {
     return this._nombre;
   }
-  get impuesto(){
-    return this._impuesto;
+  get montoBrutoAnual() {
+    return this._impuesto.montoBrutoAnual;
+  }
+  get deducciones() {
+    return this._impuesto.deducciones;
   }
   //setter
-  set nombre(nuevo_nombre){
-    this._nombre = nuevo_nombre
+  set nombre(nuevo_nombre) {
+    this._nombre = nuevo_nombre;
   }
-  set impuesto(nuevo_impuesto){
-    this._nombre = nuevo_impuesto
+  set montoBrutoAnual(nuevo_monto) {
+    this._impuesto.montoBrutoAnual = nuevo_monto;
+  }
+  set deducciones(nueva_deduccion) {
+    this._impuesto.deducciones = nueva_deduccion;
   }
   //metodo de calculo de impuestos
-  calcularImpuesto(){
-    const { montoBrutoAnual, deducciones} = this._impuesto
-    return (montoBrutoAnual - deducciones) * 0.21 
+  calcularImpuesto() {
+    return (this._impuesto.montoBrutoAnual - this._impuesto.deducciones) * 0.21;
   }
 }
 
 //exportar objeto y metodos
-export{
-  Cliente
-}
+export { Cliente };

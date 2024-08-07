@@ -15,8 +15,11 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 var Cliente = exports.Cliente = /*#__PURE__*/function () {
   function Cliente(nombre, impuesto) {
     _classCallCheck(this, Cliente);
+    //metodos y metodos asociados a objeto Impuesto
     this._nombre = nombre;
     this._impuesto = impuesto;
+    this._impuesto.montoBrutoAnual = impuesto.montoBrutoAnual;
+    this._impuesto.deducciones = impuesto.deducciones;
   }
   //getter
   return _createClass(Cliente, [{
@@ -30,21 +33,26 @@ var Cliente = exports.Cliente = /*#__PURE__*/function () {
       this._nombre = nuevo_nombre;
     }
   }, {
-    key: "impuesto",
+    key: "montoBrutoAnual",
     get: function get() {
-      return this._impuesto;
+      return this._impuesto.montoBrutoAnual;
     },
-    set: function set(nuevo_impuesto) {
-      this._nombre = nuevo_impuesto;
+    set: function set(nuevo_monto) {
+      this._impuesto.montoBrutoAnual = nuevo_monto;
+    }
+  }, {
+    key: "deducciones",
+    get: function get() {
+      return this._impuesto.deducciones;
+    },
+    set: function set(nueva_deduccion) {
+      this._impuesto.deducciones = nueva_deduccion;
     }
     //metodo de calculo de impuestos
   }, {
     key: "calcularImpuesto",
     value: function calcularImpuesto() {
-      var _this$_impuesto = this._impuesto,
-        montoBrutoAnual = _this$_impuesto.montoBrutoAnual,
-        deducciones = _this$_impuesto.deducciones;
-      return (montoBrutoAnual - deducciones) * 0.21;
+      return (this._impuesto.montoBrutoAnual - this._impuesto.deducciones) * 0.21;
     }
   }]);
 }(); //exportar objeto y metodos
